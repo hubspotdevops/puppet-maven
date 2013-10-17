@@ -21,6 +21,11 @@ Puppet::Type.newtype(:maven) do
 
   ensurable do
     self.defaultvalues
+
+    newvalue(:latest) do
+      provider.create
+    end
+
     defaultto :present
   end
 
